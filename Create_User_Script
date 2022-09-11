@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# this program is a command line script used to create 30 useraccounts
+
+if (( $EUID != 0))
+then
+	# let the user know that they are root
+	echo "you are root"
+
+	# loop through 1 to 30
+	for iterator in {1..30}
+	do
+		# notify user about creating a new user
+		echo "creating user: user_$iterator"
+
+		# actually create the new user
+		sudo adduser user_{$iterator} --gecos "" --disabled-password
+	done
+
+	echo "Finished creating $iterator user accounts"
+else
+	echo "you are not root if you wish to use this script change to root user."
+fi
+
