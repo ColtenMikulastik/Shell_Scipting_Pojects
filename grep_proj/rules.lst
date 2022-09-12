@@ -1,0 +1,12 @@
+Rules:
+	-find all words ending with "ing"
+	-count the number of words that ends with "ing"
+	-find all the words starting with "be"
+	-Find the exact word "test"
+	-Find all words that start with "m" and ends with "t"
+	-find the MAC addresses
+	-find the telephone addresses
+	-find the email addresses
+	-find the social security number
+	-find out the IP addresses
+
