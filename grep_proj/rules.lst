@@ -17,4 +17,6 @@ new-info:
 	-comment before evey line of code
 	-echo cmd before actual grep telling people what's happeneing
 	-sort: done
-	-
+	-$EUID do cull out all bad users
+		-is effective user id, instead of $UID
+
