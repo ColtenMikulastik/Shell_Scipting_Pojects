@@ -18,7 +18,7 @@ spec_grep -c .*ing
 spec_grep ^be.*
 
 # exact word test (I don't know why this isn't working)
-spec_grep -w test
+spec_grep -w test$
 
 # word starts with m ends with t
 spec_grep m.*t

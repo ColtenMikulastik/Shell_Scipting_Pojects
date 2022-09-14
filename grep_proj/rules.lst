@@ -10,3 +10,11 @@ Rules:
 	-find the social security number
 	-find out the IP addresses
 
+new-info:
+	-word doc
+	-probably call it:"grepscript.sh"
+	-comment after shebang: "# (yourname) /n# lab 4 using grep/n # {date}"
+	-comment before evey line of code
+	-echo cmd before actual grep telling people what's happeneing
+	-sort: done
+	-
