@@ -22,9 +22,13 @@ grep ..:..:..:..:..:.. ./grep_wordlist.txt | sort
 grep \(...\)-...-.... ./grep_wordlist.txt | sort
 
 # email addresses 
-grep .*\@.*\.com ./grep_wordlist.txt | sort
+grep ".*\@.*\.com" ./grep_wordlist.txt | sort
 
 # social security numbers
+grep ...-..-.... ./grep_wordlist.txt | sort 
 
 # IP address
+grep ".*\..*\..*\..*" ./grep_wordlist.txt | sort
+
+# why do some of these need quotations to work, others don't... what??????!!!!!
 
