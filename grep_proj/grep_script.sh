@@ -1,34 +1,42 @@
 #!/bin/bash
 
+# this script was created to test grep and regex
+
+# this function will grep whatever arguments you give it and sort them=
+spec_grep () {
+    grep $1 $2 ./grep_wordlist.txt | sort
+}
+
+
 # words ending in ing
-grep .*ing ./grep_wordlist.txt | sort 
+spec_grep .*ing
 
 # number of words ening ing
-grep -c .*ing ./grep_wordlist.txt | sort
+spec_grep -c .*ing
 
 # words starting in be
-grep ^be.* ./grep_wordlist.txt | sort
+spec_grep ^be.*
 
-# exact word test (I don't know why this isn't working
-grep -w "test" ./grep_wordlist.txt | sort
+# exact word test (I don't know why this isn't working)
+spec_grep -w test
 
 # word starts with m ends with t
-grep m.*t ./grep_wordlist.txt | sort
+spec_grep m.*t
 
 # MAC addresses
-grep ..:..:..:..:..:.. ./grep_wordlist.txt | sort
+spec_grep ..:..:..:..:..:..
 
-# telephone addresses isn't working
-grep \(...\)-...-.... ./grep_wordlist.txt | sort
+# telephone addresses
+spec_grep \(...\)-...-....
 
 # email addresses 
-grep ".*\@.*\.com" ./grep_wordlist.txt | sort
+spec_grep -E ".*\@.*\.(com|net)"
 
 # social security numbers
-grep ...-..-.... ./grep_wordlist.txt | sort 
+spec_grep ...-..-....
 
 # IP address
-grep ".*\..*\..*\..*" ./grep_wordlist.txt | sort
+spec_grep ".*\..*\..*\..*"
 
 # why do some of these need quotations to work, others don't... what??????!!!!!
 
