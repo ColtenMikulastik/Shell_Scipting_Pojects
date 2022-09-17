@@ -8,11 +8,11 @@
 
 # this function will grep whatever arguments you give it and sort them=
 spec_grep () {
-    grep $1 $2 ./grep_wordlist.txt | sort
+    grep "$1" "$2" ./grep_wordlist.txt | sort
 }
 
 
-if (( $EUID == 0 ))
+if (( EUID == 0 ))
 then
 	# words ending in ing
 	echo "you are running this script as super user or root"
