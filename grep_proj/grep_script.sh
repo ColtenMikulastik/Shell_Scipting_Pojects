@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Colten Vance Mikulastik
+# Lab 4 using grep
+# 9/17/2022
+
 # this script was created to test grep and regex
 
 # this function will grep whatever arguments you give it and sort them=
