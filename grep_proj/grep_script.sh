@@ -8,7 +8,7 @@
 
 # this function will grep whatever arguments you give it and sort them=
 spec_grep () {
-    grep "$1" "$2" ./grep_wordlist.txt | sort
+    grep $1 $2 ./grep_wordlist.txt | sort
 }
 
 
@@ -74,5 +74,6 @@ then
 	spec_grep ".*\..*\..*\..*"
 	echo "<finishing>: looking for IP addresses:..."
 else
-	echo "you are not a root or super user, please change you privleges and try again"
+	echo "You are neither a root or super user..."
+    echo "Please change and try again!"
 fi
