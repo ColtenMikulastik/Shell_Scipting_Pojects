@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# format for script: "./Baleful_Beholder <path to directory for watching>"
+
 #check if path is given
 if [ -z "$1" ]
 then
