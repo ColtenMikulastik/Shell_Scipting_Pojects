@@ -32,7 +32,7 @@ do
 	# notify user that file is being watched
 	echo "watching file: $watcher : ..."
 
-	# print file information with ls store in local var
+	# print file information with ls store in local var and cut for important date info
 	curr_iter=$(ls -al ${watcher} | cut -c26-38)
 	echo $curr_iter
 
