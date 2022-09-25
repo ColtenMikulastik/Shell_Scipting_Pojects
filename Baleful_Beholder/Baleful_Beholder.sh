@@ -39,20 +39,21 @@ do
 	# store output of tail
 	past_iter=$(tail -1 access_log.txt)
 
-	# then check if time difference
-	# This will not check for change in month or day yet
-	# to do this I'm gonna delimiate on ' ' and store the last variable of created array
-	past_iter_time= echo $past_iter | cut -d' ' -f 3
-	curr_iter_time= echo $curr_iter | cut -d' ' -f 3
+	# format data into seconds since the UNIX epoch
+    curr_iter_time_UNIX_epoch=$(date --date "$curr_iter" +%s)
+    past_iter_time_UNIX_epoch=$(date --date "$past_iter" +%s)
 	
 	# check equality of both times
-	if [ $past_iter_time -eq $curr_iter_time ]
+	if [ $past_iter_time_UNIX_epoch -eq $curr_iter_time_UNIX_epoch ]
 	then
 		# let user know that no changes have occured
 		echo "No change to report"
 	else
 		# if change, then notify user
-		echo "file has changed as of: $(time)"
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        echo "!!!!!!!!!!!!!!!!!!!FILE HAS CHANGED!!!!!!!!!!!!!!!!!!!!!"
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        # here is where I would send mail to a user
 	fi
 	
 	# write local var to log file 
