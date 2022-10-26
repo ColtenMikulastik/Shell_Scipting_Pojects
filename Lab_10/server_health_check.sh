@@ -36,8 +36,23 @@ echo "you are user $usern"
 newline 2
 
 # check the uptime
-u_time=$(uptime)
-echo "server has been running: $u_time"
+u_time=$(uptime | awk '{print $3}')
+echo "server has been running: $u_time mins"
+newline 2
+
+# check for running network services, anything with a colon because that is a socket
+services=$(netstat -plnt | awk '{print $4}' | grep ":")
+echo "server has services running on the following sockets:"
+for serv in $services
+do
+	echo "$serv,"
+done
+newline 2
+
+# check for common firewall/netfilter services running
+firewall=$(ps aux | grep -E "(firewalld|nfw|iptables)")
+echo $firewall
+echo "if nothing printed, I couldn't find the firewall, or the firewall isn't running"
 newline 2
 
 
