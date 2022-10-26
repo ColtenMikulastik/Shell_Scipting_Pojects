@@ -50,11 +50,16 @@ done
 newline 2
 
 # check for common firewall/netfilter services running
-firewall=$(ps aux | grep -E "(firewalld|nfw|iptables)")
+firewall=$(ps aux | grep -E "(firewalld|nfw|iptables)" | head --lines=1)
+echo "your firewall will be listed below:"
 echo $firewall
 echo "if nothing printed, I couldn't find the firewall, or the firewall isn't running"
 newline 2
 
+# show all the users currently logged into the machine
+active_users=$(w | awk '{print $1}')
+echo "the active users on this server are: "
+echo $active_users
 
 
 # check the OS of the server
