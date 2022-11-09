@@ -1,0 +1,4 @@
+
+
+you don't need all the fields for the bash script outputing the csv file
+
