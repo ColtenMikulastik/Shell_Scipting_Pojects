@@ -50,7 +50,7 @@ done
 newline 2
 
 # check for common firewall/netfilter services running
-firewall=$(ps aux | grep -E "(firewalld|nfw|iptables)" | head --lines=1)
+firewall=$(ps aux | grep -E "(firewalld|iptables)" | head --lines=1)
 echo "your firewall will be listed below:"
 echo $firewall
 echo "if nothing printed, I couldn't find the firewall, or the firewall isn't running"
