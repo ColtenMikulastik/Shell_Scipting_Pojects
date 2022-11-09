@@ -15,20 +15,26 @@ echo "About to parse from file: $1"
 # this can be done
 # cat $1 | sed 's/,/\t\t/g' > ouput.txt 
 
+
+file=$(cat $1)
+
 touch output.txt 
-while read -r line
+
+echo "" > output.txt
+
+for line in $file
 do
 	if [[ $line == $(head -1 $1) ]]
 	then
 		echo "TOP OF FILE!!!!!!!"
 		echo $line | sed 's/,/\t/g'
 		echo $line | sed 's/,/\t/g' >> output.txt
-		echo "==================================================================" >> output.txt
+		echo "====================================================================================================================" >> output.txt
 	else
-		echo $line | sed 's/,/\t\t\t/g'
+		echo $line | sed 's/,/\t\t/g'
 		echo $line | sed 's/,/\t\t\t/g' >> output.txt 
 	fi
-done <$1
+done
 
 
 
