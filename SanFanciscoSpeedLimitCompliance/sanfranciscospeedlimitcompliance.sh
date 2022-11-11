@@ -9,7 +9,7 @@
 # and then outputs a formated file "output.txt"
 
 # notify user about which file it will be parsing
-echo "Running sanfran.sh..."
+echo "Running sf.sh..."
 echo "About to parse from file: $1"
 
 # this can be done

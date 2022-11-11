@@ -23,7 +23,7 @@ take_a_break
 
 # the command piping
 # this pipe looks in my etc directory and tells me how many unquie filenames there are disregarding file extentions
-ls /etc | rev | cut -d'.' -f1 | rev| sort | uniq -c
+ls /etc | rev | cut -d'.' -f1 | rev | sort | uniq -c
 
 take_a_break
 
@@ -31,7 +31,8 @@ take_a_break
 mkfifo geek_pipe
 
 # halt terminal with the named pipe
-ls /etc | rev | cut -d'.' -f1 | rev| sort | uniq -c > geek_pipe
+# running this part of the script will halt the terminal
+ls /etc | rev | cut -d'.' -f1 | rev | sort | uniq -c > geek_pipe &
 
 # read from teh named pipe to return access to terminal
 cat < geek_pipe
