@@ -14,7 +14,10 @@ then
     for line in $(cat input.txt)
     do
         # call the expect script, and pass the username as the argument
-	    ./change_user_password.exp $line
+	./change_user_password.exp $line
+
+	# change the expire information
+	passwd -e $line
     done
 else
     # tell the user that they need to change their permissions
