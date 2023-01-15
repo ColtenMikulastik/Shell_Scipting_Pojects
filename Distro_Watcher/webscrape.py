@@ -7,6 +7,16 @@ def read_inputfile(distros):
         for line in f.readlines():
             distros.append(line.strip())
 
+def write_outputfile(dict_distros, history_value):
+    with open("output.txt", 'w') as f:
+        for key,value in dict_distros.items():
+            f.write(str(key) + ": ")
+            for link in value[:history_value:]:
+                f.write(str(link) + ", ")
+            f.write("\n")
+            
+# how many torrents back do you want to save
+history_value = 3
 
 page = requests.get("https://distrowatch.com/dwres.php?resource=bittorrent")
 soup = BeautifulSoup(page.content, "html.parser")
@@ -39,6 +49,11 @@ for torrent in soup.find_all("table")[6].find_all("tr"):
 
 print(dict_distros)
 
+for key,value in dict_distros.items():
+    print(str(key) + ": ", end='')
+    for link in value[:history_value:]:
+        print(str(link) + ", ", end='')
+    print("")
 
-#for torrent in soup.find_all("table")[6].find_all("td", class_="torrent"):
-#    print(torrent.get_text())
+write_outputfile(dict_distros, history_value)
+

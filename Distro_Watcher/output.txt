@@ -1,0 +1,3 @@
+Ubuntu: ubuntu-unity-22.10-desktop-amd64.iso.torrent, ubuntu-22.10-desktop-amd64.iso.torrent, ubuntu-20.04.5-live-server-amd64.iso.torrent, 
+Manjaro Linux: manjaro-kde-22.0-221220-linux61.iso.torrent, manjaro-kde-21.3.7-220816-linux515.iso.torrent, manjaro-kde-21.3.0-220617-linux515.iso.torrent, 
+EndeavourOS: EndeavourOS_Cassini_22_12.iso.torrent, EndeavourOS_Artemis-22_6.iso.torrent, EndeavourOS-Apollo-22_1.iso.torrent, 
