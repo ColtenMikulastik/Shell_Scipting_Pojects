@@ -16,23 +16,25 @@ read_inputfile(distros)
 print(distros)
 
 dict_distros = {}
+for distro in distros:
+    dict_distros[distro] = list()
 
 
 save_next_link = False
 for torrent in soup.find_all("table")[6].find_all("tr"):
 
-    for name_link in torrent.find_all("td", class_="torrent"):
-        for distro in distros:
-            all_relivant_links = []
+    for distro in distros:
+        for name_link in torrent.find_all("td", class_="torrent"):
             if name_link.get_text() == distro:
                 print("found a sparky: " + name_link.get_text())
                 save_next_link = True
             elif save_next_link == True:
                 print("this is sparky link: " + name_link.get_text())
                 save_next_link = False
+                all_relivant_links = list(dict_distros[distro])
                 all_relivant_links.append(name_link.get_text())
-            print(all_relivant_links)
-            dict_distros[distro] = all_relivant_links
+                dict_distros[distro] = all_relivant_links
+
 
 
 print(dict_distros)
