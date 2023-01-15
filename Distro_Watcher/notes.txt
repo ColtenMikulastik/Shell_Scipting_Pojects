@@ -1,0 +1,12 @@
+
+
+so we need to download the html file from the internet, and look through it for the data that we want.
+    -check every day I think would be good
+    -start from the top of the page, looking for keywords.
+        -when found then add those links to a file
+
+
+Then we need to make a queue that will go through each link and use a torrent client to download information.
+    -check that there are changes between the new and the old, and only download if they are old
+    -read from the torrent file, and download necissary content.
+    
